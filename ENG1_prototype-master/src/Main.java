@@ -7,9 +7,9 @@ public class Main {
         // the primary gameplay loop involves performing activities each day, one of which must be studying
         TimeEnergy time = new TimeEnergy();
         // rather than use the predefined constants, new values can be used, since they are not modified at runtime
-        Event event1 = new Event( EventConstants.eventATime, EventConstants.eventAEnergy);
-        Event event2 = new Event( EventConstants.eventBTime, EventConstants.eventBEnergy);
-        Event event3 = new Event(EventConstants.eventCTime, EventConstants.eventCEnergy);
+        Event event1 = new Event( 1, 2);
+        Event event2 = new Event( 1, 2);
+        Event event3 = new Event(1, 2;
         Event eatingA = new Event(1, -10);
         Event eatingB = new Event(0.5, -5);
         Event studying = new Event( 2.5 , 100, 10, 0, true);
