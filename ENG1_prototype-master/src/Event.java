@@ -18,9 +18,10 @@ public class Event {
     public Event(){
     }
 
-    public Event(double time,int energy) {
+    public Event(double time,int energy,  type eventType) {
         timeCost = time;
         energyCost = energy;
+        this.eventType = eventType;
 
     }
 
@@ -34,6 +35,13 @@ public class Event {
     }
 
 
+    public void setEnergyCost(int energyCost) {
+        this.energyCost = energyCost;
+    }
+
+    public void setTimeCost(double timeCost) {
+        this.timeCost = timeCost;
+    }
 
     public int getEnergyCost() {
         return energyCost;
