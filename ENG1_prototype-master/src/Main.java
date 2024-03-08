@@ -101,7 +101,7 @@ public class Main {
             throw new RuntimeException(e);
         }
         try {
-            myWriter.write("name" + score + "%n");
+            myWriter.write("name" + score + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -114,7 +114,7 @@ public class Main {
 
     }
 
-    public static int Score(List<Event> playedEvents){
+    public static int Score(List<Event> playedEvents) {
         int score = 0;
         int cumulativeEat = 1;
         int cumulativeSleep = 1;
@@ -124,8 +124,8 @@ public class Main {
         int recTotal = 0;
         double studyDebuff = 1;
         double recDebuff = 1;
-        for(Event event : playedEvents ){
-            switch (event.getEventType()){
+        for (Event event : playedEvents) {
+            switch (event.getEventType()) {
                 case EAT:
                     score += cumulativeEat;
                     cumulativeEat += cumulativeEat;
@@ -147,9 +147,10 @@ public class Main {
                     break;
 
             }
-            studyDebuff = - (studyCount * studyCount) + (28 * studyCount) - 150;
+            studyDebuff = -(studyCount * studyCount) + (28 * studyCount) - 150;
             recDebuff = (double) 140 / (recCount * recCount);
         }
+
         score += (int) Math.round(studyDebuff * studyTotal);
         score += (int) Math.round(recDebuff * recTotal);
         // score is calculated by the sum os study and events, subtracting fatigue and
