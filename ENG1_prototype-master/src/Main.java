@@ -1,4 +1,7 @@
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
+import java.io.FileWriter;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -18,10 +21,13 @@ public class Main {
         List<Event> playedEvents = new ArrayList<>();
 
         //played events are added to the list then the score is calculated at the end of the game
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("enter a name");
+        String name = myObj.nextLine();
 
 
         while (!time.isComplete()){
-            Scanner myObj = new Scanner(System.in);
+
 
             System.out.println("You have " + time.getDays() + " day(s),  you have " + time.getHours() + " hours remaining and " + time.getEnergy() + " amount of energy" );
             System.out.println("enter an activity");
@@ -87,6 +93,25 @@ public class Main {
         int score = Score(playedEvents);
         System.out.println("Your score is " + score);
 
+        File file = new File("scores.txt");
+        FileWriter myWriter = null;
+        try {
+            myWriter = new FileWriter("scores.txt");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            myWriter.write("name" + score + "%n");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            myWriter.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
     public static int Score(List<Event> playedEvents){
@@ -129,5 +154,10 @@ public class Main {
         score += (int) Math.round(recDebuff * recTotal);
         // score is calculated by the sum os study and events, subtracting fatigue and
         return score;
+    }
+
+    public void factory(){
+
+
     }
 }

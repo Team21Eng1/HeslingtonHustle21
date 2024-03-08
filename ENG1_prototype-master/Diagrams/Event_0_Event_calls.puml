@@ -1,8 +1,9 @@
 @startuml
 
 /' diagram meta data start
-config=StructureConfiguration;
+config=CallConfiguration;
 {
+  "rootMethod": "Event#Event()",
   "projectClassification": {
     "searchMode": "OpenProject", // OpenProject, AllProjects
     "includedProjects": "",
@@ -38,15 +39,15 @@ config=StructureConfiguration;
     "cutEnum": true,
     "cutTests": true,
     "cutClient": true,
-    "cutDataAccess": false,
-    "cutInterfaceStructures": false,
-    "cutDataStructures": false,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
     "cutGetterAndSetter": true,
     "cutConstructors": true
   },
   "graphTraversal": {
-    "forwardDepth": 6,
-    "backwardDepth": 6,
+    "forwardDepth": 3,
+    "backwardDepth": 3,
     "classPackageExcludeFilter": "",
     "classPackageIncludeFilter": "",
     "classNameExcludeFilter": "",
@@ -62,15 +63,15 @@ config=StructureConfiguration;
   },
   "details": {
     "aggregation": "GroupByClass", // ByClass, GroupByClass, None
-    "showClassGenericTypes": true,
-    "showMethods": true,
-    "showMethodParameterNames": true,
-    "showMethodParameterTypes": true,
-    "showMethodReturnType": true,
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
     "showPackageLevels": 2,
-    "showDetailedClassStructure": true
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
   },
-  "rootClass": "Main",
+  "rootClass": "Event",
   "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
 }
 diagram meta data end '/
@@ -78,62 +79,62 @@ diagram meta data end '/
 
 
 digraph g {
-    rankdir="TB"
+    rankdir="LR"
     splines=polyline
     
 
 'nodes 
-subgraph cluster_1914945579 { 
-   	label=TimeEnergy
-	labeljust=l
-	fillcolor="#ececec"
-	style=filled
-   
-   TimeEnergy1914945579[
-	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
-<TR><TD ALIGN="LEFT" >(C)TimeEnergy</TD></TR>
-<HR/>
-<TR><TD ALIGN="LEFT" >-   days: int [1]</TD></TR>
-<TR><TD ALIGN="LEFT" >-   days_Hours: float [1]</TD></TR>
-<TR><TD ALIGN="LEFT" >-   energy: int [1]</TD></TR>
-<HR/>
-<TR><TD ALIGN="LEFT" >+ checkEnergy(nrg: int): boolean</TD></TR>
-<TR><TD ALIGN="LEFT" >+ checkEvent(time: double, nrg: int): boolean</TD></TR>
-<TR><TD ALIGN="LEFT" >+ checkTime(time: double): boolean</TD></TR>
-<TR><TD ALIGN="LEFT" >+ decreaseDays()</TD></TR>
-<TR><TD ALIGN="LEFT" >- decreaseEnergy(nrg: int): boolean</TD></TR>
-<TR><TD ALIGN="LEFT" >- decreaseHours(time: double): boolean</TD></TR>
-<TR><TD ALIGN="LEFT" >+ event(time: double, nrg: int): boolean</TD></TR>
-</TABLE>>
-	style=filled
-	margin=0
-	shape=plaintext
-	fillcolor="#FFFFFF"
-];
-} 
-
 subgraph cluster_2390489 { 
    	label=Main
 	labeljust=l
 	fillcolor="#ececec"
 	style=filled
    
-   Main2390489[
-	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
-<TR><TD ALIGN="LEFT" >(C)Main</TD></TR>
-<HR/>
-<TR><TD ALIGN="LEFT" >+ Score(playedEvents: List&lt;Event&gt;): int</TD></TR>
-<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
-</TABLE>>
+   subgraph cluster_1706522830 { 
+   	label=Main
+	labeljust=l
+	fillcolor=white
 	style=filled
-	margin=0
-	shape=plaintext
-	fillcolor="#FFFFFF"
+   
+   Main2390489XXXmain1859653459[
+	label="+ main()"
+	style=filled
+	fillcolor=white
+	tooltip="Main
+
+null"
+	fontcolor=darkgreen
 ];
+} 
+} 
+
+subgraph cluster_67338874 { 
+   	label=Event
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_672443910 { 
+   	label=Event
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Event67338874XXXEvent0[
+	label="+ Event()"
+	style=filled
+	fillcolor=white
+	tooltip="Event
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
 } 
 
 'edges    
-
+Main2390489XXXmain1859653459 -> Event67338874XXXEvent0;
     
 }
 @enduml

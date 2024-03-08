@@ -1,0 +1,197 @@
+@startuml
+digraph g {
+    rankdir="LR"
+    splines=polyline
+
+
+'nodes
+subgraph cluster_1914945579 {
+   	label=TimeEnergy
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+
+   subgraph cluster_568764530 {
+   	label=TimeEnergy
+	labeljust=l
+	fillcolor=white
+	style=filled
+
+   TimeEnergy1914945579XXXcheckEnergy104431[
+	label="+ checkEnergy()"
+	style=filled
+	fillcolor=white
+	tooltip="TimeEnergy
+
+null"
+	fontcolor=darkgreen
+];
+
+TimeEnergy1914945579XXXcheckEvent1667339062[
+	label="+ checkEvent()"
+	style=filled
+	fillcolor=white
+	tooltip="TimeEnergy
+
+null"
+	fontcolor=darkgreen
+];
+
+TimeEnergy1914945579XXXcheckTime1325958191[
+	label="+ checkTime()"
+	style=filled
+	fillcolor=white
+	tooltip="TimeEnergy
+
+null"
+	fontcolor=darkgreen
+];
+
+TimeEnergy1914945579XXXdecreaseDays0[
+	label="+ decreaseDays()"
+	style=filled
+	fillcolor=white
+	tooltip="TimeEnergy
+
+null"
+	fontcolor=darkgreen
+];
+
+TimeEnergy1914945579XXXevent1667339062[
+	label="+ event()"
+	style=filled
+	fillcolor=white
+	tooltip="TimeEnergy
+
+null"
+	fontcolor=darkgreen
+];
+}
+}
+
+subgraph cluster_2390489 {
+   	label=Main
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+
+   subgraph cluster_1706522830 {
+   	label=Main
+	labeljust=l
+	fillcolor=white
+	style=filled
+
+   Main2390489XXXScore181577278[
+	label="+ Score()"
+	style=filled
+	fillcolor=white
+	tooltip="Main
+
+null"
+	fontcolor=darkgreen
+];
+
+Main2390489XXXmain1859653459[
+	label="+ main()"
+	style=filled
+	fillcolor=white
+	tooltip="Main
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+}
+}
+
+subgraph cluster_67338874 {
+   	label=Event
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+
+   subgraph cluster_672443910 {
+   	label=Event
+	labeljust=l
+	fillcolor=white
+	style=filled
+
+   Event67338874XXXEvent0[
+	label="+ Event()"
+	style=filled
+	fillcolor=white
+	tooltip="Event
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+}
+}
+
+subgraph cluster_234563 {
+   	label=Character
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+
+   subgraph cluster_672443910 {
+   	label=Character
+	labeljust=l
+	fillcolor=white
+	style=filled
+
+   CharacterXXXmoney[
+	label="+ getMoney()"
+	style=filled
+	fillcolor=white
+	tooltip="Main
+
+	];
+
+
+
+null"
+	fontcolor=darkgreen
+];
+
+Main2390489XXXmain1859653459[
+	label="+ main()"
+	style=filled
+	fillcolor=white
+	tooltip="Main
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+
+characterXXXmain1859653459[
+	label="+ getCharacter()"
+	style=filled
+	fillcolor=white
+	tooltip="Main
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+
+}
+}
+'edges
+Main2390489XXXmain1859653459 -> Main2390489XXXScore181577278;
+Main2390489XXXmain1859653459 ->characterXXXmain1859653459;
+Main2390489XXXmain1859653459 -> TimeEnergy1914945579XXXcheckEvent1667339062;
+Main2390489XXXmain1859653459 -> TimeEnergy1914945579XXXevent1667339062;
+TimeEnergy1914945579XXXcheckEvent1667339062 -> TimeEnergy1914945579XXXcheckEnergy104431;
+TimeEnergy1914945579XXXcheckEvent1667339062 -> TimeEnergy1914945579XXXcheckTime1325958191;
+TimeEnergy1914945579XXXevent1667339062 -> TimeEnergy1914945579XXXdecreaseDays0;
+Main2390489XXXmain1859653459 -> Event67338874XXXEvent0;
+characterXXXmain1859653459 -> CharacterXXXmoney;
+
+
+}
+
+
+@enduml
