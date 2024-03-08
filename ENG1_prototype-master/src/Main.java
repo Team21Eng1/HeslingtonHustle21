@@ -95,7 +95,10 @@ public class Main {
         int cumulativeSleep = 1;
         int studyCount = 0;
         int studyTotal = 0;
+        int recCount = 0;
+        int recTotal = 0;
         double studyDebuff = 1;
+        double recDebuff = 1;
         for(Event event : playedEvents ){
             switch (event.getEventType()){
                 case EAT:
@@ -108,6 +111,7 @@ public class Main {
                     break;
                 case RECREATIONAL:
                     score += event.getEnjoymentStudyLevel();
+                    recCount += 1;
                     break;
                 case STUDY:
                     studyTotal += event.getEnjoymentStudyLevel();
@@ -119,12 +123,10 @@ public class Main {
 
             }
             studyDebuff = - (studyCount * studyCount) + (28 * studyCount) - 150;
-
-
-
+            recDebuff = (double) 140 / (recCount * recCount);
         }
-
-        score += Math.round(studyDebuff * studyTotal);
+        score += (int) Math.round(studyDebuff * studyTotal);
+        score += (int) Math.round(recDebuff * recTotal);
         // score is calculated by the sum os study and events, subtracting fatigue and
         return score;
     }

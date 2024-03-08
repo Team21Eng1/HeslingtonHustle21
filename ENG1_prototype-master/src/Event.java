@@ -1,3 +1,4 @@
+
 public class Event {
     private int isStudy;
     private String name;
@@ -40,7 +41,7 @@ public class Event {
     }
 
     public void setTimeCost(double timeCost) {
-        this.timeCost = timeCost;
+
     }
 
     public int getEnergyCost() {
