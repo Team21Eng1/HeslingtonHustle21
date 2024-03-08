@@ -6,7 +6,7 @@ public class TimeEnergy {
     public TimeEnergy(){
         days = 7;
         days_Hours = 16;
-        energy = 1000;
+        energy = 20;
 
     }
 
