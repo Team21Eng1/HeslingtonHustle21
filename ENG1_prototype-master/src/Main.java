@@ -86,9 +86,16 @@ public class Main {
                 if(time.checkTime(currentEvent.getTimeCost()) && plCharacter.checkEnergy(currentEvent.getEnergyCost())) {
                     time.decreaseHours(currentEvent.getTimeCost());
                     plCharacter.decreaseEnergy(currentEvent.getEnergyCost());
-                    if(time.getHours() == 0 || plCharacter.getEnergy() == 0){
+                    if(time.getHours() == 0 ){
+                        time.resetHours();
                         time.decreaseDays();
+                    } else if (plCharacter.getEnergy() == 0) {
+                        plCharacter.resetEnergy();
+                        time.decreaseDays();
+
                     }
+
+
                     playedEvents.add(currentEvent);
                 }
             }

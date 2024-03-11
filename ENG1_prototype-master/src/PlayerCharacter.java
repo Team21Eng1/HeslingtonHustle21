@@ -36,6 +36,10 @@ public class PlayerCharacter {
         return true;
     }
 
+    public void resetEnergy(){
+        energy = 20;
+    }
+
     public void decreaseEnergy(int nrg){
 
         if (energy - nrg == 0) {

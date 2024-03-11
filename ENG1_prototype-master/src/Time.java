@@ -57,9 +57,7 @@ public class Time {
     }
 
 
-    public boolean checkEvent(double time, int nrg){
-        return (checkTime(time) && checkEnergy(nrg));
-    }
+
 
 
     public boolean isComplete(){
