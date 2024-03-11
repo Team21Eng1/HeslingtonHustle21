@@ -21,9 +21,9 @@ public class Main {
         List<Event> playedEvents = new ArrayList<>();
 
         //played events are added to the list then the score is calculated at the end of the game
-        Scanner myObj = new Scanner(System.in);
+
         System.out.println("enter a name");
-        String name = myObj.nextLine();
+        String name = input();
 
 
         while (!time.isComplete()){
@@ -34,7 +34,7 @@ public class Main {
             int isComplete = 0;
             Event currentEvent = new Event();
             while(isComplete == 0){
-                String event = myObj.nextLine();
+                String event = input();
 
 
                 switch (event.toLowerCase()){
@@ -157,8 +157,10 @@ public class Main {
         return score;
     }
 
-    public void factory(){
-
-
+    public static String input(){
+        Scanner myObj = new Scanner(System.in);
+        return myObj.nextLine();
     }
+
+
 }
