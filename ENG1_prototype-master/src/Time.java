@@ -1,12 +1,11 @@
-public class TimeEnergy {
+public class Time {
     private int days;
     private float days_Hours;
-    private int energy;
 
-    public TimeEnergy(){
+
+    public Time(){
         days = 7;
         days_Hours = 16;
-        energy = 20;
 
     }
 
@@ -16,8 +15,11 @@ public class TimeEnergy {
     }
 
     public float getHours() {
-
         return days_Hours;
+    }
+
+    public void resetHours(){
+        this.days_Hours = 16;
     }
 
     public void decreaseDays(){
@@ -27,7 +29,7 @@ public class TimeEnergy {
 
     /*a boolean function is used to return if the function was successful or not
     once the time has reached 0 the day count decreases*/
-    private boolean decreaseHours(double time){
+    public boolean decreaseHours(double time){
         if (days_Hours - time < 0){
             return false;
         }
@@ -41,45 +43,19 @@ public class TimeEnergy {
 
     }
 
-    public int getEnergy(){
-        return energy;
-    }
 
-    private boolean decreaseEnergy(int nrg){
-        if (energy - nrg < 0){
-            return false;
-        }
-        else if (energy - nrg == 0) {
-            energy = 12;
-            decreaseDays();
-            return true;
-        }
-        energy -= nrg;
-        return true;
-    }
+
 
     public boolean checkTime(double time){
-        if (energy - time < 0){
+        if (this.days_Hours - time < 0){
             return false;
         }
-        else if (energy - time == 0) {
-            return true;
-        }
-        return true;
-    }
-    public boolean checkEnergy(int nrg){
-        if (energy - nrg < 0){
-            return false;
-        }
-        else if (energy - nrg == 0) {
+        else if (this.days_Hours - time == 0) {
             return true;
         }
         return true;
     }
 
-    public boolean event(double time, int nrg){
-        return (decreaseHours(time) && decreaseEnergy(nrg));
-    }
 
     public boolean checkEvent(double time, int nrg){
         return (checkTime(time) && checkEnergy(nrg));

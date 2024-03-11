@@ -8,7 +8,7 @@ import java.io.FileWriter;
 public class Main {
     public static void main(String[] args) {
         // the primary gameplay loop involves performing activities each day, one of which must be studying
-        TimeEnergy time = new TimeEnergy();
+        Time time = new Time();
         // rather than use the predefined constants, new values can be used, since they are not modified at runtime
         Event event1 = new Event( 1, 2, 10,-5,Event.type.RECREATIONAL);
         Event event2 = new Event( 1, 2,20,-10, Event.type.RECREATIONAL);
@@ -17,6 +17,7 @@ public class Main {
         Event eatingB = new Event(0.5, -5, Event.type.EAT);
         Event studying = new Event( 2.5 , 100, 10, 10, Event.type.STUDY);
         Event studyCatchUp = new Event( 5 , 200, 20, 20, Event.type.STUDY);
+        PlayerCharacter plCharacter = new PlayerCharacter();
         Event sleep = new Event(0, 0, Event.type.SLEEP);
         List<Event> playedEvents = new ArrayList<>();
 
@@ -29,7 +30,7 @@ public class Main {
         while (!time.isComplete()){
 
 
-            System.out.println("You have " + time.getDays() + " day(s),  you have " + time.getHours() + " hours remaining and " + time.getEnergy() + " amount of energy" );
+            System.out.println("You have " + time.getDays() + " day(s),  you have " + time.getHours() + " hours remaining and " + plCharacter.getEnergy() + " amount of energy" );
             System.out.println("enter an activity");
             int isComplete = 0;
             Event currentEvent = new Event();
@@ -68,7 +69,7 @@ public class Main {
                         break;
                     case "h":
                         currentEvent = sleep;
-                        currentEvent.setEnergyCost(- time.getEnergy());
+                        currentEvent.setEnergyCost(- plCharacter.getEnergy());
                         currentEvent.setTimeCost(time.getHours());
                         isComplete = 1;
                         break;
@@ -82,8 +83,12 @@ public class Main {
 
             if(currentEvent != null){
 
-                if(time.checkEvent(currentEvent.getTimeCost(), currentEvent.getEnergyCost())) {
-                    time.event(currentEvent.getTimeCost(), currentEvent.getEnergyCost());
+                if(time.checkTime(currentEvent.getTimeCost()) && plCharacter.checkEnergy(currentEvent.getEnergyCost())) {
+                    time.decreaseHours(currentEvent.getTimeCost());
+                    plCharacter.decreaseEnergy(currentEvent.getEnergyCost());
+                    if(time.getHours() == 0 || plCharacter.getEnergy() == 0){
+                        time.decreaseDays();
+                    }
                     playedEvents.add(currentEvent);
                 }
             }

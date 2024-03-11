@@ -68,6 +68,8 @@ public class Event {
         return name;
     }
 
+
+
     /*
     this class allows for the interfacing of the time and energy classes
     it holds the event name a link to the event constants and the values it holds for scoring
