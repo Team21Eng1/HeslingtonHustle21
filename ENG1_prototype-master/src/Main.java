@@ -18,7 +18,6 @@ public class Main {
         Event studying = new Event( 2.5 , 100, 10, 10, Event.type.STUDY);
         Event studyCatchUp = new Event( 5 , 200, 20, 20, Event.type.STUDY);
         PlayerCharacter plCharacter = new PlayerCharacter();
-        Event sleep = new Event(0, 0, Event.type.SLEEP);
         List<Event> playedEvents = new ArrayList<>();
 
         //played events are added to the list then the score is calculated at the end of the game
@@ -72,9 +71,7 @@ public class Main {
                         isComplete = 1;
                         break;
                     case "h":
-                        currentEvent = sleep;
-                        currentEvent.setEnergyCost(- plCharacter.getEnergy());
-                        currentEvent.setTimeCost(time.getHours());
+                        currentEvent = new Event(time.getHours(), - plCharacter.getEnergy(), Event.type.SLEEP);
                         isComplete = 1;
                         break;
                     default:
@@ -117,7 +114,7 @@ public class Main {
             throw new RuntimeException(e);
         }
         try {
-            myWriter.write("name" + score + "\n");
+            myWriter.write(name + " score: " + score + "\n");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

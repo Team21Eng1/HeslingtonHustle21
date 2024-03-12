@@ -1,7 +1,7 @@
 
 public class Event {
-    private int isStudy;
-    private String name;
+
+
     private double timeCost;
     private int energyCost;
     private int fatigue;
