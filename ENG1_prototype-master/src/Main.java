@@ -9,10 +9,10 @@ public class Main {
     public static void main(String[] args) {
         // the primary gameplay loop involves performing activities each day, one of which must be studying
         Time time = new Time();
-        // rather than use the predefined constants, new values can be used, since they are not modified at runtime
+        // this declares all the events a player has, and no event other than sleep is modified at runtime
         Event event1 = new Event( 1, 2, 10,-5,Event.type.RECREATIONAL);
-        Event event2 = new Event( 1, 2,20,-10, Event.type.RECREATIONAL);
-        Event event3 = new Event(2, 2,50,10, Event.type.RECREATIONAL);
+        Event event2 = new Event( 1, 2,20,-10, Event.type.RECREATIONAL, 15);
+        Event event3 = new Event(2, 2,50,10, Event.type.RECREATIONAL, 25);
         Event eatingA = new Event(1, -10, Event.type.EAT);
         Event eatingB = new Event(0.5, -5, Event.type.EAT);
         Event studying = new Event( 2.5 , 100, 10, 10, Event.type.STUDY);
@@ -29,15 +29,13 @@ public class Main {
 
         while (!time.isComplete()){
 
-
-            System.out.println("You have " + time.getDays() + " day(s),  you have " + time.getHours() + " hours remaining and " + plCharacter.getEnergy() + " amount of energy" );
-            System.out.println("enter an activity");
+            // by replacing outputs with functions, it becomes easier to modify code to suit specific engines
+            statusOutput( time,  plCharacter);
             int isComplete = 0;
             Event currentEvent = new Event();
             while(isComplete == 0){
                 String event = input();
-
-
+                // the switch statement uses placeholder names, however they can be named anything and it will not affect code operation
                 switch (event.toLowerCase()){
                     case "a":
                         currentEvent = event1;
@@ -45,11 +43,17 @@ public class Main {
                         break;
                     case "b":
                         currentEvent = event2;
-                        isComplete = 1;
+                        if(plCharacter.getMoney() - currentEvent.getMoneyCost() > 0){
+                            isComplete = 1;
+                            plCharacter.addMoney(- currentEvent.getMoneyCost());
+                        }
                         break;
                     case "c":
                         currentEvent = event3;
-                        isComplete = 1;
+                        if(plCharacter.getMoney() - currentEvent.getMoneyCost() > 0){
+                            isComplete = 1;
+                            plCharacter.addMoney(- currentEvent.getMoneyCost());
+                        }
                         break;
                     case "d":
                         currentEvent = eatingA;
@@ -172,6 +176,12 @@ public class Main {
     public static String input(){
         Scanner myObj = new Scanner(System.in);
         return myObj.nextLine();
+    }
+
+    public static void statusOutput(Time time, PlayerCharacter plCharacter){
+        System.out.println("You have " + time.getDays() + " day(s),  you have " + time.getHours() + " hours remaining and " + plCharacter.getEnergy() + " amount of energy" );
+        System.out.println("enter an activity");
+
     }
 
 

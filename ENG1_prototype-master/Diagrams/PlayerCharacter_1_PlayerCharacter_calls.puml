@@ -3,7 +3,7 @@
 /' diagram meta data start
 config=CallConfiguration;
 {
-  "rootMethod": "TimeEnergy#getDays()",
+  "rootMethod": "PlayerCharacter#PlayerCharacter(int,int)",
   "projectClassification": {
     "searchMode": "OpenProject", // OpenProject, AllProjects
     "includedProjects": "",
@@ -71,7 +71,7 @@ config=CallConfiguration;
     "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
     "showDetailedClassStructure": false
   },
-  "rootClass": "TimeEnergy",
+  "rootClass": "PlayerCharacter",
   "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
 }
 diagram meta data end '/
@@ -84,23 +84,23 @@ digraph g {
     
 
 'nodes 
-subgraph cluster_1914945579 { 
-   	label=TimeEnergy
+subgraph cluster_1134844632 { 
+   	label=PlayerCharacter
 	labeljust=l
 	fillcolor="#ececec"
 	style=filled
    
-   subgraph cluster_568764530 { 
-   	label=TimeEnergy
+   subgraph cluster_26073186 { 
+   	label=PlayerCharacter
 	labeljust=l
 	fillcolor=white
 	style=filled
    
-   TimeEnergy1914945579XXXgetDays0[
-	label="+ getDays()"
+   PlayerCharacter1134844632XXXPlayerCharacter515322732[
+	label="+ PlayerCharacter()"
 	style=filled
 	fillcolor=white
-	tooltip="TimeEnergy
+	tooltip="PlayerCharacter
 
 null"
 	penwidth=4
@@ -109,32 +109,8 @@ null"
 } 
 } 
 
-subgraph cluster_2390489 { 
-   	label=Main
-	labeljust=l
-	fillcolor="#ececec"
-	style=filled
-   
-   subgraph cluster_1706522830 { 
-   	label=Main
-	labeljust=l
-	fillcolor=white
-	style=filled
-   
-   Main2390489XXXmain1859653459[
-	label="+ main()"
-	style=filled
-	fillcolor=white
-	tooltip="Main
-
-null"
-	fontcolor=darkgreen
-];
-} 
-} 
-
 'edges    
-Main2390489XXXmain1859653459 -> TimeEnergy1914945579XXXgetDays0;
+
     
 }
 @enduml

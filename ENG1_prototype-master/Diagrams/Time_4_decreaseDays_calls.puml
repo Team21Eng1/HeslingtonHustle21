@@ -3,7 +3,7 @@
 /' diagram meta data start
 config=CallConfiguration;
 {
-  "rootMethod": "TimeEnergy#event(double,int)",
+  "rootMethod": "Time#decreaseDays()",
   "projectClassification": {
     "searchMode": "OpenProject", // OpenProject, AllProjects
     "includedProjects": "",
@@ -71,7 +71,7 @@ config=CallConfiguration;
     "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
     "showDetailedClassStructure": false
   },
-  "rootClass": "TimeEnergy",
+  "rootClass": "Time",
   "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
 }
 diagram meta data end '/
@@ -84,41 +84,6 @@ digraph g {
     
 
 'nodes 
-subgraph cluster_1914945579 { 
-   	label=TimeEnergy
-	labeljust=l
-	fillcolor="#ececec"
-	style=filled
-   
-   subgraph cluster_568764530 { 
-   	label=TimeEnergy
-	labeljust=l
-	fillcolor=white
-	style=filled
-   
-   TimeEnergy1914945579XXXdecreaseDays0[
-	label="+ decreaseDays()"
-	style=filled
-	fillcolor=white
-	tooltip="TimeEnergy
-
-null"
-	fontcolor=darkgreen
-];
-
-TimeEnergy1914945579XXXevent1667339062[
-	label="+ event()"
-	style=filled
-	fillcolor=white
-	tooltip="TimeEnergy
-
-null"
-	penwidth=4
-	fontcolor=darkgreen
-];
-} 
-} 
-
 subgraph cluster_2390489 { 
    	label=Main
 	labeljust=l
@@ -143,9 +108,45 @@ null"
 } 
 } 
 
+subgraph cluster_2606829 { 
+   	label=Time
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1994425678 { 
+   	label=Time
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Time2606829XXXdecreaseDays0[
+	label="+ decreaseDays()"
+	style=filled
+	fillcolor=white
+	tooltip="Time
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+
+Time2606829XXXdecreaseHours1325958191[
+	label="+ decreaseHours()"
+	style=filled
+	fillcolor=white
+	tooltip="Time
+
+null"
+	fontcolor=darkgreen
+];
+} 
+} 
+
 'edges    
-Main2390489XXXmain1859653459 -> TimeEnergy1914945579XXXevent1667339062;
-TimeEnergy1914945579XXXevent1667339062 -> TimeEnergy1914945579XXXdecreaseDays0;
+Main2390489XXXmain1859653459 -> Time2606829XXXdecreaseDays0;
+Main2390489XXXmain1859653459 -> Time2606829XXXdecreaseHours1325958191;
+Time2606829XXXdecreaseHours1325958191 -> Time2606829XXXdecreaseDays0;
     
 }
 @enduml

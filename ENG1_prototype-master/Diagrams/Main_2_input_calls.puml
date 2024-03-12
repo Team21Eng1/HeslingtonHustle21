@@ -3,7 +3,7 @@
 /' diagram meta data start
 config=CallConfiguration;
 {
-  "rootMethod": "TimeEnergy#TimeEnergy()",
+  "rootMethod": "Main#input()",
   "projectClassification": {
     "searchMode": "OpenProject", // OpenProject, AllProjects
     "includedProjects": "",
@@ -71,7 +71,7 @@ config=CallConfiguration;
     "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
     "showDetailedClassStructure": false
   },
-  "rootClass": "TimeEnergy",
+  "rootClass": "Main",
   "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
 }
 diagram meta data end '/
@@ -84,31 +84,6 @@ digraph g {
     
 
 'nodes 
-subgraph cluster_1914945579 { 
-   	label=TimeEnergy
-	labeljust=l
-	fillcolor="#ececec"
-	style=filled
-   
-   subgraph cluster_568764530 { 
-   	label=TimeEnergy
-	labeljust=l
-	fillcolor=white
-	style=filled
-   
-   TimeEnergy1914945579XXXTimeEnergy0[
-	label="+ TimeEnergy()"
-	style=filled
-	fillcolor=white
-	tooltip="TimeEnergy
-
-null"
-	penwidth=4
-	fontcolor=darkgreen
-];
-} 
-} 
-
 subgraph cluster_2390489 { 
    	label=Main
 	labeljust=l
@@ -121,7 +96,18 @@ subgraph cluster_2390489 {
 	fillcolor=white
 	style=filled
    
-   Main2390489XXXmain1859653459[
+   Main2390489XXXinput0[
+	label="+ input()"
+	style=filled
+	fillcolor=white
+	tooltip="Main
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+
+Main2390489XXXmain1859653459[
 	label="+ main()"
 	style=filled
 	fillcolor=white
@@ -134,7 +120,7 @@ null"
 } 
 
 'edges    
-Main2390489XXXmain1859653459 -> TimeEnergy1914945579XXXTimeEnergy0;
+Main2390489XXXmain1859653459 -> Main2390489XXXinput0;
     
 }
 @enduml

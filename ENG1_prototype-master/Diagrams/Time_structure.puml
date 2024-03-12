@@ -70,7 +70,7 @@ config=StructureConfiguration;
     "showPackageLevels": 2,
     "showDetailedClassStructure": true
   },
-  "rootClass": "Main",
+  "rootClass": "Time",
   "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
 }
 diagram meta data end '/
@@ -83,52 +83,6 @@ digraph g {
     
 
 'nodes 
-subgraph cluster_1134844632 { 
-   	label=PlayerCharacter
-	labeljust=l
-	fillcolor="#ececec"
-	style=filled
-   
-   PlayerCharacter1134844632[
-	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
-<TR><TD ALIGN="LEFT" >(C)PlayerCharacter</TD></TR>
-<HR/>
-<TR><TD ALIGN="LEFT" >-   energy: int [1]</TD></TR>
-<TR><TD ALIGN="LEFT" >-   money: int [1]</TD></TR>
-<HR/>
-<TR><TD ALIGN="LEFT" >+ addMoney(money: int)</TD></TR>
-<TR><TD ALIGN="LEFT" >+ checkEnergy(nrg: int): boolean</TD></TR>
-<TR><TD ALIGN="LEFT" >+ decreaseEnergy(nrg: int)</TD></TR>
-<TR><TD ALIGN="LEFT" >+ resetEnergy()</TD></TR>
-</TABLE>>
-	style=filled
-	margin=0
-	shape=plaintext
-	fillcolor="#FFFFFF"
-];
-} 
-
-subgraph cluster_2390489 { 
-   	label=Main
-	labeljust=l
-	fillcolor="#ececec"
-	style=filled
-   
-   Main2390489[
-	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
-<TR><TD ALIGN="LEFT" >(C)Main</TD></TR>
-<HR/>
-<TR><TD ALIGN="LEFT" >+ Score(playedEvents: List&lt;Event&gt;): int</TD></TR>
-<TR><TD ALIGN="LEFT" >+ input(): String</TD></TR>
-<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
-</TABLE>>
-	style=filled
-	margin=0
-	shape=plaintext
-	fillcolor="#FFFFFF"
-];
-} 
-
 subgraph cluster_2606829 { 
    	label=Time
 	labeljust=l

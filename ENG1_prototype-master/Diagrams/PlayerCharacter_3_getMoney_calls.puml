@@ -3,7 +3,7 @@
 /' diagram meta data start
 config=CallConfiguration;
 {
-  "rootMethod": "Main#main(String[])",
+  "rootMethod": "PlayerCharacter#getMoney()",
   "projectClassification": {
     "searchMode": "OpenProject", // OpenProject, AllProjects
     "includedProjects": "",
@@ -71,7 +71,7 @@ config=CallConfiguration;
     "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
     "showDetailedClassStructure": false
   },
-  "rootClass": "Main",
+  "rootClass": "PlayerCharacter",
   "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
 }
 diagram meta data end '/
@@ -96,75 +96,11 @@ subgraph cluster_1134844632 {
 	fillcolor=white
 	style=filled
    
-   PlayerCharacter1134844632XXXcheckEnergy104431[
-	label="+ checkEnergy()"
+   PlayerCharacter1134844632XXXgetMoney0[
+	label="+ getMoney()"
 	style=filled
 	fillcolor=white
 	tooltip="PlayerCharacter
-
-null"
-	fontcolor=darkgreen
-];
-
-PlayerCharacter1134844632XXXdecreaseEnergy104431[
-	label="+ decreaseEnergy()"
-	style=filled
-	fillcolor=white
-	tooltip="PlayerCharacter
-
-null"
-	fontcolor=darkgreen
-];
-
-PlayerCharacter1134844632XXXresetEnergy0[
-	label="+ resetEnergy()"
-	style=filled
-	fillcolor=white
-	tooltip="PlayerCharacter
-
-null"
-	fontcolor=darkgreen
-];
-} 
-} 
-
-subgraph cluster_2390489 { 
-   	label=Main
-	labeljust=l
-	fillcolor="#ececec"
-	style=filled
-   
-   subgraph cluster_1706522830 { 
-   	label=Main
-	labeljust=l
-	fillcolor=white
-	style=filled
-   
-   Main2390489XXXScore181577278[
-	label="+ Score()"
-	style=filled
-	fillcolor=white
-	tooltip="Main
-
-null"
-	fontcolor=darkgreen
-];
-
-Main2390489XXXinput0[
-	label="+ input()"
-	style=filled
-	fillcolor=white
-	tooltip="Main
-
-null"
-	fontcolor=darkgreen
-];
-
-Main2390489XXXmain1859653459[
-	label="+ main()"
-	style=filled
-	fillcolor=white
-	tooltip="Main
 
 null"
 	penwidth=4
@@ -173,71 +109,8 @@ null"
 } 
 } 
 
-subgraph cluster_2606829 { 
-   	label=Time
-	labeljust=l
-	fillcolor="#ececec"
-	style=filled
-   
-   subgraph cluster_1994425678 { 
-   	label=Time
-	labeljust=l
-	fillcolor=white
-	style=filled
-   
-   Time2606829XXXcheckTime1325958191[
-	label="+ checkTime()"
-	style=filled
-	fillcolor=white
-	tooltip="Time
-
-null"
-	fontcolor=darkgreen
-];
-
-Time2606829XXXdecreaseDays0[
-	label="+ decreaseDays()"
-	style=filled
-	fillcolor=white
-	tooltip="Time
-
-null"
-	fontcolor=darkgreen
-];
-
-Time2606829XXXdecreaseHours1325958191[
-	label="+ decreaseHours()"
-	style=filled
-	fillcolor=white
-	tooltip="Time
-
-null"
-	fontcolor=darkgreen
-];
-
-Time2606829XXXresetHours0[
-	label="+ resetHours()"
-	style=filled
-	fillcolor=white
-	tooltip="Time
-
-null"
-	fontcolor=darkgreen
-];
-} 
-} 
-
 'edges    
-Main2390489XXXmain1859653459 -> Main2390489XXXScore181577278;
-Main2390489XXXmain1859653459 -> Main2390489XXXinput0;
-Main2390489XXXmain1859653459 -> PlayerCharacter1134844632XXXcheckEnergy104431;
-Main2390489XXXmain1859653459 -> PlayerCharacter1134844632XXXdecreaseEnergy104431;
-Main2390489XXXmain1859653459 -> PlayerCharacter1134844632XXXresetEnergy0;
-Main2390489XXXmain1859653459 -> Time2606829XXXcheckTime1325958191;
-Main2390489XXXmain1859653459 -> Time2606829XXXdecreaseDays0;
-Main2390489XXXmain1859653459 -> Time2606829XXXdecreaseHours1325958191;
-Main2390489XXXmain1859653459 -> Time2606829XXXresetHours0;
-Time2606829XXXdecreaseHours1325958191 -> Time2606829XXXdecreaseDays0;
+
     
 }
 @enduml

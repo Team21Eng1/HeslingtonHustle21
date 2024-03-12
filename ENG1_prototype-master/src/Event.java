@@ -6,6 +6,7 @@ public class Event {
     private int energyCost;
     private int fatigue;
     private int enjoymentStudyLevel;
+    private int moneyCost;
     public enum type {
         EAT,
         SLEEP,
@@ -26,13 +27,24 @@ public class Event {
 
     }
 
+
     public Event(double time,int energy, int enjoymentStudyLevel, int fatigue, type eventType) {
-        // since externally there is no difference between using an int for enjoyment and one for studylevel,
+        // since externally there is no difference between using an int for enjoyment and one for studylevel, they are combined to a single variable whose relevance is determined by the event type.
         timeCost = time;
         energyCost = energy;
         this.enjoymentStudyLevel = enjoymentStudyLevel;
         this.fatigue = fatigue;
         this.eventType = eventType;
+    }
+
+    public Event(double time,int energy, int enjoymentStudyLevel, int fatigue, type eventType, int moneyCost) {
+
+        timeCost = time;
+        energyCost = energy;
+        this.enjoymentStudyLevel = enjoymentStudyLevel;
+        this.fatigue = fatigue;
+        this.eventType = eventType;
+        this.moneyCost = moneyCost;
     }
 
 
@@ -68,8 +80,9 @@ public class Event {
         return name;
     }
 
-
-
+    public int getMoneyCost() {
+        return moneyCost;
+    }
     /*
     this class allows for the interfacing of the time and energy classes
     it holds the event name a link to the event constants and the values it holds for scoring
