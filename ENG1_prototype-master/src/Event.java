@@ -76,10 +76,6 @@ public class Event {
         return eventType;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public int getMoneyCost() {
         return moneyCost;
     }
