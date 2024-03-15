@@ -10,13 +10,13 @@ public class Main {
         // the primary gameplay loop involves performing activities each day, one of which must be studying
         Time time = new Time();
         // this declares all the events a player has, and no event other than sleep is modified at runtime
-        Event event1 = new Event( 1, 2, 10,-5,Event.type.RECREATIONAL);
-        Event event2 = new Event( 1, 2,20,-10, Event.type.RECREATIONAL, 15);
-        Event event3 = new Event(2, 2,50,10, Event.type.RECREATIONAL, 25);
-        Event eatingA = new Event(1, -10, Event.type.EAT);
-        Event eatingB = new Event(0.5, -5, Event.type.EAT);
-        Event studying = new Event( 2.5 , 100, 10, 10, Event.type.STUDY);
-        Event studyCatchUp = new Event( 5 , 200, 20, 20, Event.type.STUDY);
+        Event event1 = new Event( 1, 2, 10,-5,Event.type.RECREATIONAL, "");
+        Event event2 = new Event( 1, 2,20,-10, Event.type.RECREATIONAL, 15, "");
+        Event event3 = new Event(2, 2,50,10, Event.type.RECREATIONAL, 25, "");
+        Event eatingA = new Event(1, -10, Event.type.EAT, "");
+        Event eatingB = new Event(0.5, -5, Event.type.EAT, "");
+        Event studying = new Event( 2.5 , 100, 10, 10, Event.type.STUDY, "");
+        Event studyCatchUp = new Event( 5 , 200, 20, 20, Event.type.STUDY, "");
         PlayerCharacter plCharacter = new PlayerCharacter();
         List<Event> playedEvents = new ArrayList<>();
 
@@ -71,7 +71,7 @@ public class Main {
                         isComplete = 1;
                         break;
                     case "h":
-                        currentEvent = new Event(time.getHours(), - plCharacter.getEnergy(), Event.type.SLEEP);
+                        currentEvent = new Event(time.getHours(), - plCharacter.getEnergy(), Event.type.SLEEP, "");
                         isComplete = 1;
                         break;
                     default:

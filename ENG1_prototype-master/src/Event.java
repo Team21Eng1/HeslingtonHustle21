@@ -7,6 +7,8 @@ public class Event {
     private int fatigue;
     private int enjoymentStudyLevel;
     private int moneyCost;
+
+    private String description;
     public enum type {
         EAT,
         SLEEP,
@@ -20,24 +22,26 @@ public class Event {
     public Event(){
     }
 
-    public Event(double time,int energy,  type eventType) {
+    public Event(double time,int energy,  type eventType, String description) {
         timeCost = time;
         energyCost = energy;
         this.eventType = eventType;
+        this.description = description;
 
     }
 
 
-    public Event(double time,int energy, int enjoymentStudyLevel, int fatigue, type eventType) {
+    public Event(double time,int energy, int enjoymentStudyLevel, int fatigue, type eventType, String description) {
         // since externally there is no difference between using an int for enjoyment and one for studylevel, they are combined to a single variable whose relevance is determined by the event type.
         timeCost = time;
         energyCost = energy;
         this.enjoymentStudyLevel = enjoymentStudyLevel;
         this.fatigue = fatigue;
         this.eventType = eventType;
+        this.description = description;
     }
 
-    public Event(double time,int energy, int enjoymentStudyLevel, int fatigue, type eventType, int moneyCost) {
+    public Event(double time,int energy, int enjoymentStudyLevel, int fatigue, type eventType, int moneyCost, String description) {
 
         timeCost = time;
         energyCost = energy;
@@ -45,6 +49,7 @@ public class Event {
         this.fatigue = fatigue;
         this.eventType = eventType;
         this.moneyCost = moneyCost;
+        this.description = description;
     }
 
 
@@ -79,6 +84,11 @@ public class Event {
     public int getMoneyCost() {
         return moneyCost;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
     /*
     this class allows for the interfacing of the time and energy classes
     it holds the event name a link to the event constants and the values it holds for scoring
