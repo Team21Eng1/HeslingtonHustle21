@@ -4,7 +4,7 @@ public class PlayerCharacter {
 
     public PlayerCharacter(){
         this.money = 100;
-        this.energy = 20;
+        this.energy = 30;
 
     }
 

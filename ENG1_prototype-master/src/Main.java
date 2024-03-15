@@ -15,8 +15,8 @@ public class Main {
         Event event3 = new Event(2, 2,50,10, Event.type.RECREATIONAL, 25, "");
         Event eatingA = new Event(1, -10, Event.type.EAT, "");
         Event eatingB = new Event(0.5, -5, Event.type.EAT, "");
-        Event studying = new Event( 2.5 , 100, 10, 10, Event.type.STUDY, "");
-        Event studyCatchUp = new Event( 5 , 200, 20, 20, Event.type.STUDY, "");
+        Event studying = new Event( 2.5 , 5, 10, 10, Event.type.STUDY, "");
+        Event studyCatchUp = new Event( 5 , 10, 20, 20, Event.type.STUDY, "");
         PlayerCharacter plCharacter = new PlayerCharacter();
         List<Event> playedEvents = new ArrayList<>();
 
