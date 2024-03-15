@@ -81,9 +81,8 @@ public class Main {
 
             }
 
-
+            // while this appears redundant, it is to catch any errors that may produce a current event = null
             if(currentEvent != null){
-
                 if(time.checkTime(currentEvent.getTimeCost()) && plCharacter.checkEnergy(currentEvent.getEnergyCost())) {
                     time.decreaseHours(currentEvent.getTimeCost());
                     plCharacter.decreaseEnergy(currentEvent.getEnergyCost());
@@ -127,6 +126,12 @@ public class Main {
 
     }
 
+    /**
+     * This is a function that outputs a calculated score based on the values contained within events, and their nature
+     *
+     * @param playedEvents a list of all the events that occurred in a game cycle
+     * @return             the calculated int value for score
+     * */
     public static int Score(List<Event> playedEvents) {
         int score = 0;
         int cumulativeEat = 1;

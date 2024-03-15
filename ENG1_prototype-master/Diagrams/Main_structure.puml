@@ -106,7 +106,32 @@ subgraph cluster_1134844632 {
 	shape=plaintext
 	fillcolor="#FFFFFF"
 ];
-} 
+}
+
+subgraph cluster_67338874 {
+   	label=Event
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+
+   Event67338874[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Event</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   energyCost: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   enjoymentStudyLevel: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   eventType: type [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fatigue: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isStudy: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   timeCost: double [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+}
 
 subgraph cluster_2390489 { 
    	label=Main
