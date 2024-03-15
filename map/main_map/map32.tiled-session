@@ -1,0 +1,68 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map1.tmx",
+    "expandedProjectPaths": [
+        ".",
+        "assets"
+    ],
+    "fileStates": {
+        "Modern_Exteriors_Complete_Tileset_32x32.tsx": {
+            "scaleInDock": 0.5068,
+            "scaleInEditor": 1
+        },
+        "assets/DALL·E 2024-03-12 13.41.20 - Create a detailed tileset for a computer lab environment. Include tiles for desktop computers, laptops, tables, chairs, screens, keyboards, mice, tech.tsx": {
+            "scaleInDock": 0.3396,
+            "scaleInEditor": 1
+        },
+        "assets/Interiors_free_32x32.tsx": {
+            "scaleInDock": 1.0251,
+            "scaleInEditor": 1
+        },
+        "assets/newcs.tsx": {
+            "scaleInDock": 0.2038,
+            "scaleInEditor": 1
+        },
+        "assets/resized_computer_lab_tileset.tsx": {
+            "scaleInDock": 0.558,
+            "scaleInEditor": 1
+        },
+        "map1.tmx": {
+            "expandedGroupLayers": [
+                28
+            ],
+            "scale": 0.28,
+            "selectedLayer": 26,
+            "viewCenter": {
+                "x": 1401.7857142857144,
+                "y": 1141.0714285714284
+            }
+        },
+        "topDown_baseTiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "/Users/surbhilahoria/Documents/Study/stage2/Eng1/MAP/assets",
+    "map.height": 10,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 20,
+    "openFiles": [
+        "map1.tmx",
+        "Modern_Exteriors_Complete_Tileset_32x32.tsx",
+        "assets/Interiors_free_32x32.tsx"
+    ],
+    "project": "map32.tiled-project",
+    "recentFiles": [
+        "assets/Interiors_free_32x32.tsx",
+        "Modern_Exteriors_Complete_Tileset_32x32.tsx",
+        "map1.tmx",
+        "assets/resized_computer_lab_tileset.tsx",
+        "assets/newcs.tsx",
+        "assets/DALL·E 2024-03-12 13.41.20 - Create a detailed tileset for a computer lab environment. Include tiles for desktop computers, laptops, tables, chairs, screens, keyboards, mice, tech.tsx",
+        "topDown_baseTiles.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
