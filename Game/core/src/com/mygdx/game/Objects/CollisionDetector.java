@@ -38,7 +38,6 @@ public class CollisionDetector {
         }
 
         else if (obj1 instanceof Building && obj2 instanceof PlayerController) {
-            // Reverse the order of objects for simplicity
             handleCollision(obj2, obj1);
         }
     }
