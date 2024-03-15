@@ -14,6 +14,7 @@ import com.mygdx.game.Objects.Building;
 import com.mygdx.game.Objects.GameObject;
 import com.mygdx.game.Objects.PlayerController;
 import com.mygdx.game.Objects.TiledTest;
+import com.mygdx.game.Objects.CollisionDetector;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,9 @@ public class GameScreen implements Screen {
     TiledMapRenderer TmRender;
     TiledMap tiledMap;
 
+    // Collision detection
+    CollisionDetector collisionDetector;
+
 
     public GameScreen(final HesHustle game) {
         this.game = game;
@@ -40,6 +44,9 @@ public class GameScreen implements Screen {
 
         tiledMap = new TmxMapLoader().load("MAP/map1.tmx");
         TmRender = new OrthogonalTiledMapRenderer(tiledMap);
+
+        collisionDetector = new CollisionDetector();
+
         create();
 
     }
@@ -53,6 +60,8 @@ public class GameScreen implements Screen {
         objects.add(ComSci);
         objects.add(Nisa);
 
+        // Register objects with the collision detector
+        collisionDetector.registerObjects(objects);
 
         Gdx.input.setInputProcessor(Player);
     }
@@ -60,7 +69,13 @@ public class GameScreen implements Screen {
         for (GameObject gameObject : objects) {
             gameObject.update(delta);
         }
+
+        // Detect collisions
+        collisionDetector.detectCollisions();
     }
+
+
+
     @Override
     public void render(float delta) {
         update(delta);
@@ -75,9 +90,6 @@ public class GameScreen implements Screen {
         TmRender.render();
 
         renderObjects();
-
-
-
 
     }
     public void renderObjects()
