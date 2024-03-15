@@ -13,8 +13,8 @@ public class Main {
         Event event1 = new Event( 1, 2, 10,-5,Event.type.RECREATIONAL, "");
         Event event2 = new Event( 1, 2,20,-10, Event.type.RECREATIONAL, 15, "");
         Event event3 = new Event(2, 2,50,10, Event.type.RECREATIONAL, 25, "");
-        Event eatingA = new Event(1, -10, Event.type.EAT, "");
-        Event eatingB = new Event(0.5, -5, Event.type.EAT, "");
+        Event eatingA = new Event(1, -6, Event.type.EAT, "");
+        Event eatingB = new Event(0.5, -3, Event.type.EAT, "");
         Event studying = new Event( 2.5 , 5, 10, 10, Event.type.STUDY, "");
         Event studyCatchUp = new Event( 5 , 10, 20, 20, Event.type.STUDY, "");
         PlayerCharacter plCharacter = new PlayerCharacter();
@@ -176,7 +176,7 @@ public class Main {
         score += (int) Math.round(recDebuff * recTotal);
 
         // 924 is the theoretical max a score can be, excluding debuffs and assuming 14 study sessions and 10 recreational session
-        return (int)((score/ 692)* 100);
+        return (int)((score / 692)* 10);
     }
 
     public static String input(){
