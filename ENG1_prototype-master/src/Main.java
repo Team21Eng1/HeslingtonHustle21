@@ -168,7 +168,7 @@ public class Main {
                     break;
 
             }
-            studyDebuff = -(studyCount * studyCount) + (28 * studyCount) - 150;
+            studyDebuff = 0.15 * (-(studyCount * studyCount) + (28 * studyCount));
             recDebuff = (double) 140 / (((recCount - 10) * (recCount- 10)) + 5);
         }
 
@@ -176,7 +176,7 @@ public class Main {
         score += (int) Math.round(recDebuff * recTotal);
 
         // 924 is the theoretical max a score can be, excluding debuffs and assuming 14 study sessions and 10 recreational session
-        return (int)(score/ 9.24);
+        return (int)((score/ 692)* 100);
     }
 
     public static String input(){
