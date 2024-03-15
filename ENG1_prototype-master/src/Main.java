@@ -106,7 +106,7 @@ public class Main {
         System.out.println("Your score is " + score);
 
         File file = new File("scores.txt");
-        FileWriter myWriter = null;
+        FileWriter myWriter;
         try {
             myWriter = new FileWriter("scores.txt");
         } catch (IOException e) {
@@ -136,6 +136,7 @@ public class Main {
         int score = 0;
         int cumulativeEat = 1;
         int cumulativeSleep = 1;
+        int fatigue = 0;
         int studyCount = 0;
         int studyTotal = 0;
         int recCount = 0;
@@ -155,10 +156,12 @@ public class Main {
                 case RECREATIONAL:
                     score += event.getEnjoymentStudyLevel();
                     recCount += 1;
+                    score += event.getFatigue();
                     break;
                 case STUDY:
                     studyTotal += event.getEnjoymentStudyLevel();
                     studyCount += 1;
+                    score += event.getFatigue();
                     break;
                 default:
                     score += 1;
@@ -171,6 +174,7 @@ public class Main {
 
         score += (int) Math.round(studyDebuff * studyTotal);
         score += (int) Math.round(recDebuff * recTotal);
+
         // score is calculated by the sum os study and events, subtracting fatigue and
         return score;
     }
