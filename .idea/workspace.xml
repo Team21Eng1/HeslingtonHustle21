@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a7166b1-2b1d-47db-aa59-0f30ad1b3f2e" name="Changes" comment="dropped commented code">
+    <list default="true" id="9a7166b1-2b1d-47db-aa59-0f30ad1b3f2e" name="Changes" comment="added documentation to the building class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game/core/src/com/mygdx/game/Objects/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/core/src/com/mygdx/game/Objects/Building.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/core/src/com/mygdx/game/Objects/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/core/src/com/mygdx/game/Objects/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/core/src/com/mygdx/game/Objects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/core/src/com/mygdx/game/Objects/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/core/src/com/mygdx/game/Objects/PlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game/core/src/com/mygdx/game/Objects/PlayerController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +91,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710850758180</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added documentation to the building class">
+      <option name="closed" value="true" />
+      <created>1710858785205</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710858785205</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +119,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="modified event adding" />
     <MESSAGE value="dropped commented code" />
-    <option name="LAST_COMMIT_MESSAGE" value="dropped commented code" />
+    <MESSAGE value="added documentation to the building class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added documentation to the building class" />
   </component>
 </project>

@@ -28,6 +28,11 @@ public class GUI extends GameObject{
 
     EventManager EM;
     String timeStr;
+    /** The constructor that creates an instance of a GUI which extends the GameObject class
+     *
+     * @param batch  the current batch pf omages tooi
+     * @param EM
+     */
     public GUI(Batch batch, EventManager EM) {
         super(0,0,0,0);
         this.EM = EM;
@@ -79,6 +84,8 @@ public class GUI extends GameObject{
 
     }
 
+    /** creates a new instance of a drawn object
+     */
     public void createDraws(){
         lbl = new TextButton("he he ha",skin);
         topLeft.add(lbl).pad(4);
@@ -100,6 +107,8 @@ public class GUI extends GameObject{
 
 
     }
+    /** Updates the displayed progress bar
+     */
     public void update(float deltaTime){
         prog+=1;
         nrgBar.setValue(prog);
@@ -111,6 +120,12 @@ public class GUI extends GameObject{
 
     }
 
+    /** Renders the current game
+     *
+     * @param game        The game bein rendered
+     * @param projection  The Matrix4 of the rendered game
+     * @param shape       The shape of the rendered game
+     */
     public void render(Matrix4 projection, HesHustle game, ShapeRenderer shape)
     {
         stage.act();

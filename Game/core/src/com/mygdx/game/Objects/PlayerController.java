@@ -49,6 +49,13 @@ public class PlayerController extends GameObject implements InputProcessor {
 
     public EventManager EM;
     public Building nearBD;
+
+    /** A constructor that loads the initial player as well as the EventManager associated with them
+     *
+     * @param EM   The events associated with the current player
+     * @param xPos The float x position of the player
+     * @param yPos The float y position of the player
+     */
     public PlayerController(float xPos, float yPos, EventManager EM)
     {
         super(xPos,yPos,width,height);
@@ -80,6 +87,10 @@ public class PlayerController extends GameObject implements InputProcessor {
 
     }
 
+    /** a function that returns the overall direction of the users inputs
+     *
+     * @return a Vector2 representing the users current vector movement
+     */
     public Vector2 getDir() {
         //find overall direction of inputs and normalize vector2
         Vector2 dir = new Vector2(0,0);
@@ -89,6 +100,12 @@ public class PlayerController extends GameObject implements InputProcessor {
         if (downKeys.contains(right)){ dir.x = 1;}
         return dir;
     }
+
+    /** A function that returns the current state of the players movement
+     *
+     * @param Pstate  the current state of the player
+     * @return the appropriate actions the player should perform in that state
+     */
     public Anim getAnim(state Pstate)
     {
         Vector2 dir = getDir();
@@ -142,6 +159,11 @@ public class PlayerController extends GameObject implements InputProcessor {
 
 
     }
+
+    /** A functiopn that sets the building
+     *
+     * @param BD The building to be set
+     */
     public void setBD(Building BD){
         nearBD = BD;
     }
@@ -167,6 +189,12 @@ public class PlayerController extends GameObject implements InputProcessor {
         return true;
 
     }
+
+    /** A function that checks if multiple oposing keys are down, if so both keys are trated as not being down
+     *
+     * @param keycode the key that is currently being pressed
+     * @return a boolean confirming that the action has been taken
+     * */
     public boolean onMultipleKeysDown(int keycode){
         if ((keycode==left && downKeys.contains(right)) || (keycode==right && downKeys.contains(left))) {
             downKeys.remove(left);
