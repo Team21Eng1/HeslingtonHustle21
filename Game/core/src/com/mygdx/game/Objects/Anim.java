@@ -11,6 +11,14 @@ public class Anim {
     double time,frameTime;
     int frameStart,width,height;
 
+    /** A constructor for the animation class, which is used to properly animate a spritesheet
+     *
+     * @param fps          The framerate of the animation
+     * @param frameEnd     The frame in which the animation ends
+     * @param frameStart   The integer of the frame which the animation starts
+     * @param frameTot     The total number of animation frames
+     * @param SprSheet     The spritesheet used for the respective animation
+     */
     public Anim(Texture SprSheet, int frameStart, int frameEnd,int frameTot,int fps)
     {
         this.SprSheet = SprSheet;
@@ -24,6 +32,12 @@ public class Anim {
         this.frameTime= (double) 1 /fps;
 
     }
+    /**
+     * Returns the texture of the sprite at a specific point in the animation
+     *
+     * @param deltaTime  the time at which the texture needs to be selected
+     * @return  a texture at the specific frametime
+     */
 
     public TextureRegion GetFrame(float deltaTime)
     {
