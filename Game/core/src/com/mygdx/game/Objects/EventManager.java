@@ -11,6 +11,7 @@ import java.util.Currency;
 import java.util.List;
 import java.util.Objects;
 
+
 public class EventManager extends GameObject{
     Event event1,event2,event3,eatingA,eatingB,studying,studyCatchUp;
     Event curEvent = null;
@@ -22,6 +23,10 @@ public class EventManager extends GameObject{
     List<Building> buildings;
     List<Event> playedEvents;
 
+    /** Used to initialise the eventmanager class, whose purpose is to manage the possible generated events
+     *
+     * @param buildings A list containing all the buildings to be drawn
+     */
     public EventManager(List<Building> buildings) {
         super(0,0,0,0);
         this.buildings = buildings;
@@ -35,7 +40,7 @@ public class EventManager extends GameObject{
     }
     public void generateEvents() {
 
-        event1 = new Event( 60, 2, 10,-5,Event.type.RECREATIONAL, "",new Texture("Activitys/basketballcourt.png"));
+        event1 = new Event( 60, 2, 10,-5,Event.type.RECREATIONAL, 0, "",new Texture("Activitys/basketballcourt.png"));
         event2 = new Event( 60, 2,20,-10, Event.type.RECREATIONAL, 15, "",new Texture("Activitys/cs.png"));
         event3 = new Event(120, 2,50,10, Event.type.RECREATIONAL, 25, "",new Texture("Activitys/basketballcourt.png"));
         eatingA = new Event(30, -10, Event.type.EAT, "",new Texture("Activitys/basketballcourt.png"));
@@ -79,6 +84,10 @@ public class EventManager extends GameObject{
         }
 
     }
+    /** returns time in a string format
+     *
+     * @return  a string indicating the tine in minutes and seconds
+     */
 
     public String getTime()
     {
@@ -104,7 +113,6 @@ public class EventManager extends GameObject{
      *
      * @return score an integer representing the players geades
      */
-    /
     public int Score() {
         int score = 0;
         int cumulativeEat = 1;
@@ -157,54 +165,22 @@ public class EventManager extends GameObject{
      *
      * @param event the name of the event that occured
      * */
-    public void addEvent(String event){
-        switch (event.toLowerCase()){
-            case "a":
-                currentEvent = event1;
-                isComplete = 1;
-                break;
-            case "b":
-                currentEvent = event2;
+    public void addEvent(){
+        switch (curEvent.getEventType()){
+            case RECREATIONAL:
                 if(money - currentEvent.getMoneyCost() > 0){
                     isComplete = 1;
                     money -=  currentEvent.getMoneyCost();
                 }
-                break;
-            case "c":
-                currentEvent = event3;
-                if(money - currentEvent.getMoneyCost() > 0){
-                    isComplete = 1;
-                    money -=  currentEvent.getMoneyCost();
-                }
-                break;
-            case "d":
-                currentEvent = eatingA;
-                isComplete = 1;
-                break;
-            case "e":
-                currentEvent = eatingB;
-                isComplete = 1;
-                break;
-            case "f":
-                currentEvent = studying;
-                isComplete = 1;
-                break;
-            case "g":
-                currentEvent = studyCatchUp;
-                isComplete = 1;
-                break;
-            case "h":
-                currentEvent = new Event((TMin + (TSec / 60)), - energy, Event.type.SLEEP, "");
-                isComplete = 1;
                 break;
             default:
                 System.out.println("invalid input");
 
         }
-        if(currentEvent != null){
-            if((TMin + (TSec / 60)) >= currentEvent.getTimeCost() && energy >= currentEvent.getEnergyCost()) {
-                TMin += (currentEvent.getTimeCost());
-                energy += (currentEvent.getEnergyCost());
+        if(curEvent != null){
+            if((TMin + (TSec / 60)) >= curEvent.getTimeCost() && energy >= curEvent.getEnergyCost()) {
+                TMin += (curEvent.getTimeCost());
+                energy += (curEvent.getEnergyCost());
                 if((TMin + (TSec / 60)) == 960 ){
                     TMin = 0;
                     TSec = 0;
@@ -213,7 +189,7 @@ public class EventManager extends GameObject{
                     energy = 30;
                     days += 1;
                 }
-                playedEvents.add(currentEvent);
+                playedEvents.add(curEvent);
             }
         }
 
