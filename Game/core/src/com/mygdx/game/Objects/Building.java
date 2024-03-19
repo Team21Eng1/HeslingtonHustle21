@@ -14,12 +14,25 @@ public class Building extends GameObject{
     public String name;
     public Boolean interact;
     public BitmapFont font2;
+    /** The constructor that creates a new building, a data stucture used to store a buildings name, position and if it has been interacted with
+     *
+     * @param height    The float representing building height
+     * @param interact  The boolean representing if the building is interacted with
+     * @param name      The string name of the building
+     * @param width     The float width of the building
+     * @param x         The float representing the x position of the building
+     * @param y         The float representing the y position of the building
+     */
     public Building(float x, float y, float width, float height,String name, Boolean interact) {
         super(x, y, width, height);
         this.name = name;
         this.interact = interact;
         font2 = new BitmapFont(Gdx.files.internal("font.fnt"));
     }
+    /** a function that updates the value held in delta
+     *
+     * @param delta The float value delta
+     */
 
     public void update(float delta)
     {
